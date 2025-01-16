@@ -109,4 +109,3 @@ jobs:
         body: Deployment of my-app is complete.
         to: dozie.aji@gmail.com
         from: test@gmail.com
-        
