@@ -27,12 +27,12 @@ jobs:
       run: echo "Skipping tests for now"
 
     - name: Run code scans
-      uses: github/codeql-action/init@v2
+      uses: github/codeql-action/init@v3
       with:
         languages: 'javascript'
 
     - name: Perform CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
+      uses: github/codeql-action/analyze@v3
 
   # Job for building, scanning, and pushing Docker images
   build-and-push-image:
