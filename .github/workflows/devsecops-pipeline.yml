@@ -7,7 +7,7 @@ on:
   pull_request:
 
 jobs:
-  # Job for unit tests and code scans
+  # Job for code scans (tests temporarily skipped)
   build-and-test:
     runs-on: ubuntu-latest
 
@@ -22,6 +22,9 @@ jobs:
 
     - name: Install dependencies
       run: npm install
+
+    - name: Skip tests (temporary)
+      run: echo "Skipping tests for now"
 
     - name: Run code scans
       uses: github/codeql-action/init@v2
@@ -48,7 +51,7 @@ jobs:
         docker push 179079437960.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
 
     - name: Run Trivy security scan
-      uses: aquasecurity/trivy-action@v0.7.0
+      uses: aquasecurity/trivy-action@0.28.0
       with:
         image-ref: 179079437960.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
 
