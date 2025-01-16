@@ -56,7 +56,7 @@ jobs:
         docker push 179079437960.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
 
     - name: Run Trivy security scan
-      uses: aquasecurity/trivy-action@v0.12.0
+      uses: aquasecurity/trivy-action@0.28.0
       with:
         image-ref: 179079437960.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
 
